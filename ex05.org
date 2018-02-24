@@ -66,14 +66,14 @@
 
    Test the function from =main()= for several lists of numbers. Each
    test should read a list of numbers from stdin.
-4. *Polish National Flag (PNF)*: You are given an array of items
-   =a[low:high]=, each of which is either positive or
-   negative. Define a function =PNF(a, low, high)= that partitions
-   the array into two subarrays =a[low:i]= and =a[i:high]= such that
-   all the negative items of the array form =[low:i]=, and all the
-   positive items form =[i:n]=. Test the function from =main()=. Use
-   several lists of numbers for testing. (Note: We will use this
-   algorithm for implementing =quicksort()=.)
+4. *Polish National Flag (PNF)*: In an array of items =a[low:high]=,
+   each item is either positive or negative. Define a function =PNF(a,
+   low, high)= that partitions the array into two subarrays =a[low:i]=
+   and =a[i:high]= such that all the negative items of the array form
+   =[low:i]=, and all the positive items form =[i:n]=. Test the
+   function from =main()=. Use several lists of numbers for
+   testing. (Note: We will use this algorithm for implementing
+   =quicksort()=.)
 5. *Dutch National Flag (DNF)* is similar to PNF, but partitions the
    array =a[l:h]= into three subarrays =[l:i]=, =[i:j]= and
    =[j:h]=. Each item of the array has one of the three
