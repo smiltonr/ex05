@@ -77,8 +77,8 @@
 5. *Dutch National Flag (DNF)* is similar to PNF, but partitions the
    array =a[l:h]= into three subarrays =[l:i]=, =[i:j]= and
    =[j:h]=. Each item of the array has one of the three
-   properties. Items having the same property form one subarray
-   each. 
+   properties. Items having the same property should form one subarray
+   each.
 
 * COMMENT Extra problems
 1. *GCD*: Define a function =gcd(x, y)= that computes the greatest
