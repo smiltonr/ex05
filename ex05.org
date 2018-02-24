@@ -1,0 +1,107 @@
+#+TITLE: Exercise 5: Arrays
+#+AUTHOR: S Milton Rajendram
+
+#+LaTeX_HEADER: \usepackage{palatino}
+#+LaTeX_HEADER: \usepackage[top=1in, bottom=1.25in, left=1.25in, right=1.25in]{geometry}
+#+LaTeX_HEADER: \usepackage{setspace}
+#+OPTIONS: toc:nil
+
+#+BEGIN_EXPORT latex
+\linespread{1.2}
+#+END_EXPORT
+#+PROPERTY: header-args :exports none
+* Exercises
+1. *Polynomial evaluation*: A polynomial $a_{n-1}x^{n-1} +
+   a_{n-2}x^{n-2} + \ldots + a_1x + a_0$ is represented by an array
+   =a[0:n]= of its coefficients. Write a program to compute the value
+   of a polynomial using Horner's rule. The crux of the algorithm is:
+   \hfill (/accumulator/)
+   #+LATEX: \linespread{1}
+   #+BEGIN_EXAMPLE
+   s = 0
+   for i = n-1 down to 0:
+     s = s * x + a[i]
+   #+END_EXAMPLE
+   #+LATEX: \linespread{1.2}
+   Compare the algorithm with the algorithm for summing the items of
+   an array.
+2. *Binary search*: We are given a sorted array of numbers. Define a
+   function
+   #+LATEX: \linespread{1}
+   #+BEGIN_EXAMPLE
+   binary_search(a, n, target)
+   #+END_EXAMPLE
+   #+LATEX: \linespread{1.2}
+   that searches for =target= in =a[0:n]= using binary search
+   algorithm. Let the function return an index =i= such that \hfill
+   (/search/)
+   #+BEGIN_EXAMPLE
+   a[0:i] < target <= a[i:n]
+   #+END_EXAMPLE
+3. *Selection sort*: Selection sort is an algorithm for sorting an
+   array of items, say =a[0:n]=. The idea of the algorithm is
+   expressed below:
+   #+BEGIN_EXPORT latex
+   \linespread{1}
+   #+END_EXPORT
+   #+BEGIN_EXAMPLE
+   swap a[0], a[minimum(a,0,n)]
+   swap a[1], a[minimum(a,1,n)]
+   swap a[2], a[minimum(a,2,n)]
+   ...
+   swap a[n-2], a[minimum(a,n-2,n)]   
+   #+END_EXAMPLE
+   which uses =minimum(a, i, n)= to find the minimum of a subarray
+   =a[i:n]=.
+   #+BEGIN_EXAMPLE
+   selection_sort (a, 0, n):
+      for i = 0 to n-2:
+         swap a[i], a[minimum(a, i, n)]   
+   #+END_EXAMPLE
+   #+latex: \linespread{1.2}
+   Implement selection sort, using =minimum()= function. Note:
+   remember that when a function changes the items of an array
+   parameter, the changes are effected in the items of the actual
+   array argument also.
+
+   Test the function from =main()= for several lists of numbers. Each
+   test should read a list of numbers from stdin.
+4. *Polish National Flag (PNF)*: You are given an array of items
+   =a[low:high]=, each of which is either positive or
+   negative. Define a function =PNF(a, low, high)= that partitions
+   the array into two subarrays =a[low:i]= and =a[i:high]= such that
+   all the negative items of the array form =[low:i]=, and all the
+   positive items form =[i:n]=. Test the function from =main()=. Use
+   several lists of numbers for testing. (Note: We will use this
+   algorithm for implementing =quicksort()=.)
+5. *Dutch National Flag (DNF)* is similar to PNF, but partitions the
+   array =a[l:h]= into three subarrays =[l:i]=, =[i:j]= and
+   =[j:h]=. Each item of the array has one of the three
+   properties. Items having the same property form one subarray
+   each. 
+
+* COMMENT Extra problems
+1. *GCD*: Define a function =gcd(x, y)= that computes the greatest
+   common divisor of two non-negative integers =x= and =y= using
+   Euclid algorithm. 
+2. *Factorial, Fibonacci*: Write a function =fact(n)= that computes
+   $n!$. Write a function that computes the nth Fibonacci number.
+3. Select the subset of items with a property and copy them in an
+   array. (filter)
+4. Search for an item with a certain property. Stop with the first
+   success. (search)
+   1. Linear search
+   2. Skip items in PNF
+5. Generate a sequence of states. A state is computed from the
+   previous state. Stop when the desired state is reached.
+   1. gcd
+   2. quotient and remainder
+   3. factorial
+   4. Fibonacci
+6. Subarrays with desired properties.
+   1. Polish National Flag: partition an array into two subarrays, one
+      of items having a property P and the other of items without P.
+   2. Dutch National Flag: partition an array into 3 subarrays, each
+      having a specific property P_1, P_2 and P_3. Every item has one
+      of these properties.
+   3. Binary search
