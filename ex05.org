@@ -12,7 +12,7 @@
 #+PROPERTY: header-args :exports none
 * Exercises
 1. *Polynomial evaluation*: A polynomial $a_{n-1}x^{n-1} +
-   a_{n-2}x^{n-2} + \ldots + a_1x + a_0$ is represented by an array
+   a_{n-2}x^{n-2} + \ldots + a_{1}x + a_{0}$ is represented by an array
    =a[0:n]= of its coefficients. Write a program to compute the value
    of a polynomial using Horner's rule. The crux of the algorithm is:
    \hfill (/accumulator/)
