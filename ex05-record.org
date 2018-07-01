@@ -9,7 +9,7 @@
 #+BEGIN_EXPORT latex
 \linespread{1.2}
 #+END_EXPORT
-#+PROPERTY: header-args :exports both
+#+PROPERTY: header-args  :exports both
 * Array visitor
 1. *Polynomial evaluation*: A polynomial $a_{n-1}x^{n-1} +
    a_{n-2}x^{n-2} + \ldots + a_{1}x + a_{0}$ is represented by an array
